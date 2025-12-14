@@ -38,6 +38,8 @@ public class Movie
     @Size(max = 500)
     private String description;
 
+    private String imageUrl;
+
     @Column(nullable = false)
     @Min(value = 1, message = "Duration must be at least 1 minute")
     private int duration;

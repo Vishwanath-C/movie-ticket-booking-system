@@ -52,6 +52,7 @@ public class TicketDTOMapper {
                 .ticketId(ticket.getId())
                 .movieTitle(ticket.getMovieShow().getMovieSchedule().getMovie().getTitle())
                 .theatreName(ticket.getMovieShow().getMovieSchedule().getTheatre().getName())
+                .location(ticket.getMovieShow().getMovieSchedule().getTheatre().getLocation())
                 .totalPrice(ticket.getTotalPrice())
                 .showDate(ticket.getMovieShow().getShowDate())
                 .showTime(ticket.getMovieShow().getShowTime())

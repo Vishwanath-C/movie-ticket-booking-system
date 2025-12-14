@@ -16,6 +16,7 @@ public class MovieResponseDto {
     private Long id;
     private String title;
     private String description;
+    private String imageUrl;
     private int durationMinutes;
     private boolean isCurrentlyRunning;
     private boolean isUpcoming;

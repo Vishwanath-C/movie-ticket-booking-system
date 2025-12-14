@@ -35,6 +35,7 @@ export default function AddMovieForm() {
   const [movieTitle, setMovieTitle] = useState("");
   const [movieDescription, setMovieDescription] = useState("");
   const [durationMinutes, setDurationMinutes] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const [successAlert, setSuccessAlert] = useState({ show: false, msg: "" });
   const [duplicateAlert, setDuplicateAlert] = useState({ show: false, msg: "" });
@@ -78,7 +79,7 @@ export default function AddMovieForm() {
     try {
       await apiClient.post(
         "/movies",
-        { title: movieTitle, description: movieDescription, duration },
+        { title: movieTitle, description: movieDescription, duration, imageUrl },
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -157,6 +158,16 @@ export default function AddMovieForm() {
             onChange={(e) => setMovieDescription(e.target.value)}
             error={!!errors.movieDescription}
             helperText={errors.movieDescription || " "}
+          />
+
+           <TextField
+            label="Image Url"
+            fullWidth
+            margin="normal"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
+            error={!!errors.imageUrl}
+            helperText={errors.imageUrl || " "}
           />
 
           <TextField

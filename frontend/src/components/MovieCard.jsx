@@ -28,7 +28,7 @@ const MovieCard = ({ movie }) => {
       <Box sx={{ height: 220, overflow: "hidden" }}>
         <CardMedia
           component="img"
-          image={movie.posterUrl || NoImageAvailable}
+          image={movie.imageUrl || NoImageAvailable}
           alt={movie.title}
           sx={{
             width: "100%",

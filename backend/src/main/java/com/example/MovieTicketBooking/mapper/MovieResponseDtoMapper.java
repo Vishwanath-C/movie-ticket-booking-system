@@ -15,6 +15,7 @@ public class MovieResponseDtoMapper {
                 .id(movie.getId())
                 .title(movie.getTitle())
                 .description(movie.getDescription())
+                .imageUrl(movie.getImageUrl())
                 .durationMinutes(movie.getDuration())
                 .isUpcoming(movie.getMovieSchedules().stream().
                         anyMatch(ma -> !LocalDate.now().isAfter(ma.getStartDate())))

@@ -57,6 +57,14 @@ const Ticket = ({ ticket }) => {
             </tr>
             <tr>
               <td>
+                <Typography fontWeight="bold">Location</Typography>
+              </td>
+              <td>
+                <Typography>{ticket.location}</Typography>
+              </td>
+            </tr>
+            <tr>
+              <td>
                 <Typography fontWeight="bold">Date</Typography>
               </td>
               <td>

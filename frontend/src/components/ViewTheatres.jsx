@@ -22,9 +22,8 @@ export default function ViewTheatres() {
         },
       });
       setTheatres(response.data);
-      console.log("Fetched theatres:", response.data);
+
     } catch (err) {
-      console.error("Failed to fetch theatres:", err);
       setError("Could not load theatres. Please try again later.");
     } finally {
       setLoading(false);

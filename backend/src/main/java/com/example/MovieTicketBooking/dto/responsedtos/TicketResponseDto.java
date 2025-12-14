@@ -19,6 +19,7 @@ public class TicketResponseDto
     private Long ticketId;
     private String movieTitle;
     private String theatreName;
+    private String location;
     private LocalDate showDate;
     private LocalTime showTime;
     private List<String> seatNumbers;

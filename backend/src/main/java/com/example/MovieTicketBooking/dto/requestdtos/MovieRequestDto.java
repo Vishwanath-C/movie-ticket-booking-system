@@ -21,6 +21,8 @@ public class MovieRequestDto
     @NotBlank(message = "Description is required")
     private String description;
 
+    private String imageUrl;
+
     @NotNull(message = "Duration is required")
     @Min(value = 1, message = "Duration must be at least 1 minute")
     private int duration;
