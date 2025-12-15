@@ -113,7 +113,7 @@ public class SecurityConfig
                 "http://127.0.0.1:*"));
         //c.addAllowedOrigin("https://movie-ticket-booking-mtb.netlify.app");
         
-        c.addAllowedOrigin("https://movie-ticket-booking-system.pages.dev/");
+        c.addAllowedOrigin("https://movie-ticket-booking-system.pages.dev");
         c.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         c.setAllowedHeaders(List.of("*"));
         c.setAllowCredentials(true);
