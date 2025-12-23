@@ -14,8 +14,8 @@ const ShowSeatLayoutModern = () => {
   const [selectedSeatAlert, setSelectedSeatAlert] = useState({ show: false, msg: "", severity: "warning" });
   const [totalPrice, setTotalPrice] = useState(0);
 
-  const [goldSeats, setGoldSeats] = useState({});
-  const [normalSeats, setNormalSeats] = useState({});
+  const [standardSeats, setStandardSeats] = useState({});
+  const [premiumSeats, setPremiumSeats] = useState({});
 
   const navigate = useNavigate();
   const { state } = useLocation();
@@ -28,23 +28,23 @@ const ShowSeatLayoutModern = () => {
   }, [movieShow]);
 
   useEffect(() => {
-    console.log("Updated Gold Seats:", movieShow);
-    console.log("Updated Normal Seats:", normalSeats);
-  }, [goldSeats, normalSeats]);
+    console.log("Updated Standard Seats:", movieShow);
+    console.log("Updated Premium Seats:", premiumSeats);
+  }, [standardSeats, premiumSeats]);
 
 
   useEffect(() => {
     console.log("Seats data:", seats);
-    const gold = {};
-    const normal = {};
+    const standard = {};
+    const premium = {};
     seats.forEach(seat => {
       const row = seat.seatNumber.charAt(1);
-      if (seat.seatNumber.charAt(0) === 'G') gold[row] ? gold[row].push(seat) : gold[row] = [seat];
-      if (seat.seatNumber.charAt(0) === 'N') normal[row] ? normal[row].push(seat) : normal[row] = [seat];
+      if (seat.seatNumber.charAt(0) === 'S') standard[row] ? standard[row].push(seat) : standard[row] = [seat];
+      if (seat.seatNumber.charAt(0) === 'P') premium[row] ? premium[row].push(seat) : premium[row] = [seat];
     });
-    setGoldSeats(gold);
-    setNormalSeats(normal);
-    console.log("Gold n :", goldSeats);
+    setStandardSeats(standard);
+    setPremiumSeats(premium);
+    console.log("Standard n :", standardSeats);
   }, [seats]);
 
   const handleSeatClick = (seat) => {
@@ -84,26 +84,26 @@ const ShowSeatLayoutModern = () => {
     <Box p={2}>
       {/* Legend */}
       <Box display="flex" justifyContent="center" gap={2} mb={4}>
-        <Chip label="Gold" sx={{ bgcolor: "#fff59d", color: "black", fontWeight: 'bold' }} />
-        <Chip label="Normal" sx={{ bgcolor: "#90caf9", color: "black", fontWeight: 'bold' }} />
+        <Chip label="Standard" sx={{ bgcolor: "#fff59d", color: "black", fontWeight: 'bold' }} />
+        <Chip label="Premium" sx={{ bgcolor: "#90caf9", color: "black", fontWeight: 'bold' }} />
         <Chip label="Selected" sx={{ bgcolor: "success.main", color: "white", fontWeight: 'bold' }} />
         <Chip label="Booked" sx={{ bgcolor: "#6c757d", color: "white", fontWeight: 'bold' }} />
       </Box>
 
       <Typography variant="h4" align="center" gutterBottom>Seat Layout</Typography>
-      {/* {goldSeats} */}
+      {/* {standardSeats} */}
 
-      {/* Gold Seats */}
+      {/* Standard Seats */}
       <SeatLayout
-        seats={goldSeats}
+        seats={standardSeats}
         handleSeatClick={handleSeatClick}
         selectedSeats={selectedSeats}
         showPrice={true} // pass prop to display price
       />
 
-      {/* Normal Seats */}
+      {/* Premium Seats */}
       <SeatLayout
-        seats={normalSeats}
+        seats={premiumSeats}
         handleSeatClick={handleSeatClick}
         selectedSeats={selectedSeats}
         showPrice={true} // pass prop to display price

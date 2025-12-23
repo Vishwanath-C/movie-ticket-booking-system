@@ -46,8 +46,8 @@ public class TheatreService
             for (char row = 'A'; row < 'A' + seatTypeRequest.getRowCount(); row++) {
                 for (int i = 1; i <= seatTypeRequest.getSeatsPerRow(); i++) {
 
-                    String seatNumber = seatTypeRequest.getSeatType() == SeatType.GOLD ? ("G" + row + i)
-                            : ("N" + row + i);
+                    String seatNumber = seatTypeRequest.getSeatType() == SeatType.STANDARD ? ("S" + row + i)
+                            : ("P" + row + i);
 
                     Seat seat = Seat.builder()
                             .seatType(seatTypeRequest.getSeatType())

@@ -36,7 +36,7 @@ public class SeatServiceTest
     @BeforeEach
     void setUp(){
         MockitoAnnotations.openMocks(this);
-        seat = Seat.builder().id(1L).seatType(SeatType.GOLD).price(new BigDecimal(200L)).build();
+        seat = Seat.builder().id(1L).seatType(SeatType.STANDARD).price(new BigDecimal(200L)).build();
     }
 
     @Test
@@ -63,8 +63,8 @@ public class SeatServiceTest
     void testGetAllSeatsByTheatreId(){
 
         List<Seat> seats = new ArrayList<>();
-        seats.add(Seat.builder().id(1L).seatNumber("GA1").seatType(SeatType.GOLD).price(new BigDecimal(200L)).build());
-        seats.add(Seat.builder().id(2L).seatNumber("GA3").seatType(SeatType.GOLD).price(new BigDecimal(200L)).build());
+        seats.add(Seat.builder().id(1L).seatNumber("GA1").seatType(SeatType.STANDARD).price(new BigDecimal(200L)).build());
+        seats.add(Seat.builder().id(2L).seatNumber("GA3").seatType(SeatType.STANDARD).price(new BigDecimal(200L)).build());
 
         Theatre theatre = Theatre.builder().id(1L).name("Aruna").location("Davanagere").build();
 

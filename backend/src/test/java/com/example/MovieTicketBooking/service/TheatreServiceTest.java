@@ -141,7 +141,7 @@ class TheatreServiceTest {
     // ===============================
     @Test
     void testGetTheatreById_Found() {
-        Seat seat = Seat.builder().seatNumber("G1A1").seatType(SeatType.GOLD).price(BigDecimal.valueOf(500)).build();
+        Seat seat = Seat.builder().seatNumber("G1A1").seatType(SeatType.STANDARD).price(BigDecimal.valueOf(500)).build();
         Theatre theatre = Theatre.builder().id(1L).name("PVR").location("City Center").seats(List.of(seat)).build();
         when(theatreRepository.findById(1L)).thenReturn(Optional.of(theatre));
 

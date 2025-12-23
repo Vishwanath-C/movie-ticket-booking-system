@@ -21,7 +21,7 @@ export default function SeatLayout({ seats, handleSeatClick, selectedSeats }) {
                                 ? ''
                                 : selectedSeats.includes(seat)
                                     ? 'bg-success text-white'
-                                    : type === 'GOLD'
+                                    : type === 'STANDARD'
                                         ? ''
                                         : ''
                             }`}
@@ -34,7 +34,7 @@ export default function SeatLayout({ seats, handleSeatClick, selectedSeats }) {
                                 ? '#6c757d'
                                 : selectedSeats.includes(seat)
                                     ? '#28a745'
-                                    : type === 'GOLD'
+                                    : type === 'STANDARD'
                                         ? '#fff59d'
                                         : '#90caf9',
                             color: seat.booked || selectedSeats.includes(seat) ? 'white' : 'black', // text color
@@ -56,7 +56,7 @@ export default function SeatLayout({ seats, handleSeatClick, selectedSeats }) {
                 <Card sx={{ mb: 3, p: 2 }}>
                     <CardContent>
                         <Typography variant="h6" align="center" gutterBottom fontWeight="bold" color="black" sx={{ mb: 2 }}>
-                            {Object.values(seats)[0]?.[0]?.seatType === "GOLD" ? "Gold" : "Normal"} Seats - Price: ₹{Object.values(seats)[0]?.[0]?.price || 0}
+                            {Object.values(seats)[0]?.[0]?.seatType === "STANDARD" ? "Standard" : "Premium"} Seats - Price: ₹{Object.values(seats)[0]?.[0]?.price || 0}
                         </Typography>
 
                         {renderSeatGroup(seats, Object.values(seats)[0][0].seatType)}

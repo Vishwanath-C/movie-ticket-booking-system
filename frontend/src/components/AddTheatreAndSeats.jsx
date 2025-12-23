@@ -106,9 +106,9 @@ const AddTheatreAndSeats = () => {
 
     // Reset seat inputs
     setCurrentSeatType("")
-    setCurrentPrice(0.0);
-    setCurrentRows(0);
-    setCurrentSeatsPerRow(0);
+    setCurrentPrice("");
+    setCurrentRows("");
+    setCurrentSeatsPerRow("");
     setErrors((prev) => ({ ...prev, seatType: "", currentPrice: "", currentRows: "", currentSeatsPerRow: "" }));
   };
 
