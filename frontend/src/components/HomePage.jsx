@@ -1,11 +1,17 @@
 import { Box, Button, Container, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const HomePage = ({ isLoggedIn }) => {
   const navigate = useNavigate();
 
   const handleRegisterClick = () => navigate("/register");
   const handleLoginClick = () => navigate("/login");
+
+  useEffect(() => {
+    if(isLoggedIn){
+    navigate("/home")};
+  }, [isLoggedIn, navigate]);
 
   return (
     <Container
@@ -46,6 +52,8 @@ const HomePage = ({ isLoggedIn }) => {
           </Button>
         </Box>
       )}
+
+
     </Container>
   );
 };
