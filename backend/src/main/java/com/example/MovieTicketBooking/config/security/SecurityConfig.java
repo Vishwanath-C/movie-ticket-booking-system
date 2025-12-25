@@ -114,6 +114,7 @@ public class SecurityConfig
         //c.addAllowedOrigin("https://movie-ticket-booking-mtb.netlify.app");
         
         c.addAllowedOrigin("https://movie-ticket-booking-system.pages.dev");
+        c.addAllowedOrigin("https://movie-ticket-booking-system.fly.dev");
         c.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         c.setAllowedHeaders(List.of("*"));
         c.setAllowCredentials(true);
